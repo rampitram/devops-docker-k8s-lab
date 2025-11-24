@@ -1,0 +1,18 @@
+replicaCount: 2
+
+nginx:
+  image: custom-nginx
+  port: 80
+
+node:
+  image: custom-node
+  port: 3000
+
+service:
+  type: NodePort
+  nginxNodePort: 30080
+  nodeNodePort: 30001
+
+ingress:
+  enabled: true
+  host: devops.lab
